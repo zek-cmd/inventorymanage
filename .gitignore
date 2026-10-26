@@ -1,0 +1,23 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and local runtime output
+*.log
+error_log
+php_errors.log
+
+# Local backups (empty placeholder folder, not tracked)
+/bak/
+
+# Local-only config overrides (DB credentials, etc.)
+config/database.local.php
+.env
+.env.*

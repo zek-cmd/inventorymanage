@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@source "../../../app/views/**/*.php";
+@source "../../../public/**/*.php";
+@source "../../../public/**/*.js";
+
+/* Dark mode variant */
+@variant dark (&:where(.dark, .dark *));
+
+/* Custom xs breakpoint (475px) */
+@custom-variant xs (@media (min-width: 475px));
+
+/* You can also add other custom breakpoints if needed */
+@custom-variant xs-only (@media (min-width: 475px) and (max-width: 639px));
+@custom-variant sm-only (@media (min-width: 640px) and (max-width: 767px));
+@custom-variant md-only (@media (min-width: 768px) and (max-width: 1023px));
