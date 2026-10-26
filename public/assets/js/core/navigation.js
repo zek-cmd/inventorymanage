@@ -23,6 +23,12 @@ window.InventoryApp = window.InventoryApp || {};
         }
         
         navLinks = document.querySelectorAll('.nav-link');
+        
+        var currentLink = document.querySelector('.nav-link.is-active') || navLinks[0];
+        if (currentLink) {
+            updateActiveNav(currentLink.getAttribute('data-section'));
+        }
+        
         for (var i = 0; i < navLinks.length; i++) {
             var link = navLinks[i];
             
@@ -31,7 +37,7 @@ window.InventoryApp = window.InventoryApp || {};
                 var section = this.getAttribute('data-section');
                 if (section) {
                     showSection(section);
-                    updateActiveNav(this);
+                    updateActiveNav(section);
                     if (mobileMenu) {
                         mobileMenu.classList.add('hidden');
                     }
@@ -64,16 +70,26 @@ window.InventoryApp = window.InventoryApp || {};
         }
     }
     
-    function updateActiveNav(activeLink) {
+    var ACTIVE_CLASSES = ['bg-blue-50', 'dark:bg-blue-900/20', 'text-blue-700', 'dark:text-blue-300'];
+    var INACTIVE_CLASSES = ['text-gray-600', 'dark:text-gray-400', 'hover:bg-gray-50', 'dark:hover:bg-gray-800', 'hover:text-gray-900', 'dark:hover:text-white'];
+    
+    // Marks every link for this section as active, in the sidebar AND the mobile menu,
+    // so both menus always show the same current page.
+    function updateActiveNav(section) {
         var allLinks = document.querySelectorAll('.nav-link');
         for (var i = 0; i < allLinks.length; i++) {
             var l = allLinks[i];
-            l.classList.remove('bg-white', 'dark:bg-gray-700', 'shadow-sm', 'text-gray-900', 'dark:text-white');
-            l.classList.add('text-gray-600', 'dark:text-gray-400');
+            var isActive = l.getAttribute('data-section') === section;
+            l.classList.remove.apply(l.classList, isActive ? INACTIVE_CLASSES : ACTIVE_CLASSES);
+            l.classList.add.apply(l.classList, isActive ? ACTIVE_CLASSES : INACTIVE_CLASSES);
+            if (isActive) {
+                l.classList.add('is-active');
+                l.setAttribute('aria-current', 'page');
+            } else {
+                l.classList.remove('is-active');
+                l.removeAttribute('aria-current');
+            }
         }
-        
-        activeLink.classList.remove('text-gray-600', 'dark:text-gray-400');
-        activeLink.classList.add('bg-white', 'dark:bg-gray-700', 'shadow-sm', 'text-gray-900', 'dark:text-white');
     }
     
     app.destroyNavigation = function() {

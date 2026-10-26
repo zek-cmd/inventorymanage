@@ -3,10 +3,10 @@
 ?>
 <div id="requisitionSection" style="display: none;">
     
-    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden mb-4 sm:mb-6">
-        <div class="px-3 xs:px-4 sm:px-5 py-3 sm:py-4 border-b border-gray-100 dark:border-gray-800">
-            <h5 class="text-sm xs:text-base font-semibold text-gray-900 dark:text-white">New Requisition</h5>
-            <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 hidden xs:block">Submit a new item request</p>
+    <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden mb-6">
+        <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-800">
+            <h2 class="text-sm font-semibold text-gray-900 dark:text-white">New Requisition</h2>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Submit a new item request</p>
         </div>
         <div class="p-3 xs:p-4 sm:p-5">
             <form id="requisitionForm">
@@ -71,20 +71,20 @@
 
     <?php if ($isAdmin): ?>
     
-    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden">
-        <div class="flex flex-col sm:flex-row flex-wrap justify-between items-start sm:items-center gap-3 px-3 xs:px-4 sm:px-5 py-3 sm:py-4 border-b border-gray-100 dark:border-gray-800">
+    <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-4 py-3 border-b border-gray-200 dark:border-gray-800">
             <div>
-                <h5 class="text-sm xs:text-base font-semibold text-gray-900 dark:text-white">Requisition History</h5>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 hidden xs:block">View and manage requests</p>
+                <h2 class="text-sm font-semibold text-gray-900 dark:text-white">Requisition History</h2>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">View and manage requests</p>
             </div>
-            <div class="flex flex-col xs:flex-row gap-2 w-full sm:w-auto">
+            <div class="flex flex-col xs:flex-row xs:items-center gap-2 w-full sm:w-auto sm:ml-auto">
                 <div class="relative w-full xs:w-40 sm:w-48">
                     <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 xs:h-4 xs:w-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                     <input type="text" id="requisitionSearch" placeholder="Search..." class="w-full pl-8 xs:pl-9 pr-3 py-1.5 xs:py-2 text-xs xs:text-sm border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all">
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-2 sm:justify-end">
                     <button id="generateRequisitionReportBtn" class="flex-1 xs:flex-none px-3 py-1.5 xs:py-2 text-xs xs:text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-all cursor-pointer border border-blue-200 dark:border-blue-900/30">
                         Generate Report
                     </button>
@@ -97,10 +97,10 @@
                 </div>
             </div>
         </div>
-        <div class="p-3 xs:p-4 sm:p-5">
+        <div>
             <div class="overflow-x-auto">
                 <table class="w-full">
-              <thead>
+              <thead class="bg-gray-50 dark:bg-gray-800/60">
     <tr class="border-b border-gray-100 dark:border-gray-800">
         <th class="px-2 xs:px-3 py-2 xs:py-2.5 text-center">
             <input id="selectAllRequisitions" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer" title="Select visible requisitions">

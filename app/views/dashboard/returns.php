@@ -4,10 +4,10 @@
 <?php if ($isAdmin): ?>
 <div id="returnSection" style="display: none;">
     
-    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden mb-4 sm:mb-6">
-        <div class="px-3 xs:px-4 sm:px-5 py-3 sm:py-4 border-b border-gray-100 dark:border-gray-800">
-            <h5 class="text-sm xs:text-base font-semibold text-gray-900 dark:text-white">Process Return</h5>
-            <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 hidden xs:block">Return borrowed items to stock</p>
+    <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden mb-6">
+        <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-800">
+            <h2 class="text-sm font-semibold text-gray-900 dark:text-white">Process Return</h2>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Return borrowed items to stock</p>
         </div>
         <div class="p-3 xs:p-4 sm:p-5">
             <form id="returnForm">
@@ -58,20 +58,20 @@
     </div>
 
     
-    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden">
-        <div class="flex flex-col sm:flex-row flex-wrap justify-between items-start sm:items-center gap-3 px-3 xs:px-4 sm:px-5 py-3 sm:py-4 border-b border-gray-100 dark:border-gray-800">
+    <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-4 py-3 border-b border-gray-200 dark:border-gray-800">
             <div>
-                <h5 class="text-sm xs:text-base font-semibold text-gray-900 dark:text-white">Return History</h5>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 hidden xs:block">Track returned items</p>
+                <h2 class="text-sm font-semibold text-gray-900 dark:text-white">Return History</h2>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Track returned items</p>
             </div>
-            <div class="flex flex-col xs:flex-row gap-2 w-full sm:w-auto">
+            <div class="flex flex-col xs:flex-row xs:items-center gap-2 w-full sm:w-auto sm:ml-auto">
                 <div class="relative w-full xs:w-40 sm:w-48">
                     <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 xs:h-4 xs:w-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                     <input type="text" id="returnSearch" placeholder="Search..." class="w-full pl-8 xs:pl-9 pr-3 py-1.5 xs:py-2 text-xs xs:text-sm border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all">
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-2 sm:justify-end">
                     <button id="exportReturnsBtn" class="flex-1 xs:flex-none px-3 py-1.5 xs:py-2 text-xs xs:text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all cursor-pointer border border-gray-200 dark:border-gray-700">
                         Export
                     </button>
@@ -81,10 +81,10 @@
                 </div>
             </div>
         </div>
-        <div class="p-3 xs:p-4 sm:p-5">
+        <div class="w-full xs:w-auto">
             <div class="overflow-x-auto">
                 <table class="w-full">
-                    <thead>
+                    <thead class="bg-gray-50 dark:bg-gray-800/60">
                         <tr class="border-b border-gray-100 dark:border-gray-800">
                             <th id="sortReturnReqId" class="px-2 xs:px-3 py-2 xs:py-2.5 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                                 Req ID <span class="sort-arrow"></span>
