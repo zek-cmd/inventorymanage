@@ -1,7 +1,9 @@
 <?php
 // Variables available: $isAdmin, $jsVersion, $swalVersion
 ?>
-    </div><?php // Closes the .max-w-full.mx-auto.px-4.sm:px-6.py-6 div from header.php ?>
+            </main>
+        </div>
+    </div><?php // Closes the main content, main column and flex shell opened in header.php ?>
 
     <script>
         window.isAdmin = <?php echo $isAdmin ? 'true' : 'false'; ?>;
